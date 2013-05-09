@@ -161,8 +161,8 @@ class ReplayCommand extends Command
         $total = count($commits);
         $commits = array_values($commits);
         foreach($commits as $idx => $commit) {
-            $next = $idx+1 < $total ? $commits[$idx+1] : null;
-            $prev = $idx-1 >= 0 ? $commits[$idx-1] : null;
+            $prev = $idx+1 < $total ? $commits[$idx+1] : null;
+            $next = $idx-1 >= 0 ? $commits[$idx-1] : null;
             if (strpos($current, $commit['hash']) === 0) {
                 return;
             }
