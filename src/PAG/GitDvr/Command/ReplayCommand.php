@@ -62,7 +62,7 @@ class ReplayCommand extends Command
 
         $process = $this->gitExec($path, 'checkout ', array($branch));
         if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process->getErrorOutput());
+            throw new \Exception($process->getErrorOutput());
         }
         $output->writeln($process->getOutput());
 
